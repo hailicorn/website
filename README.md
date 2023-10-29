@@ -1,1 +1,1 @@
-This is the website for hailicorn
+# Hailicorn Home page
