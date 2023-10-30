@@ -11,7 +11,11 @@ sudo ufw app list
 sudo ufw allow 'Apache Full'
 sudo ufw status
 
-# Create Folder
+# Set Apache Server Name
+sudo su -
+echo ServerName www.hailicorn.com >> /etc/apache2/apache2.conf
+
+# Create Virtual Host
 sudo mkdir /var/www/hailicorn.com
 sudo chown -R $USER:$USER /var/www/hailicorn.com
 sudo chmod -R 755 /var/www/hailicorn.com
@@ -39,3 +43,7 @@ sudo systemctl restart apache2
 
 # Test Local
 curl https://localhost
+
+# Reference
+# https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-22-04
+# https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-22-04
